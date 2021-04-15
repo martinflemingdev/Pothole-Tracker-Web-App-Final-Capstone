@@ -1,0 +1,221 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh;
+  margin: 0;
+  background: rgb(71,193,185);
+  background: linear-gradient(180deg, rgba(71,193,185,1) 25%, rgba(127,214,193,1) 44%, rgba(65,187,172,1) 70%);
+  background-repeat: no-repeat; 
+  background-size: 120% 120%; 
+  font-family: 'Work Sans', sans-serif;
+  overflow:auto;
+}
+
+#app {
+  background: #2b2a2ad8;
+  color: white;
+  width: 100%;
+  width: 75vw;
+  height: 83vh;
+  overflow: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+}
+
+h3 {
+  display: inline-flex;
+  vertical-align: middle;
+} 
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  color: white;
+}
+
+.header-img {
+  width: 75vw;
+  height: 100px;
+  background: url('http://www.mccworldinternational.com/wp-content/themes/mcc-world/images/contact_us.jpg');
+  background-size:cover;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+}
+
+/*  links  */
+
+a:link {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+} 
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* nav */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(71,193,185);
+  font-family: 'Work Sans', sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.50);
+  text-decoration: none;
+}
+
+/*  tables  */
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  text-transform: capitalize;
+  margin: 20px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+}
+
+table th, td {
+  padding: 12px 15px;
+  width: 25vw;
+}
+
+.styled-table {
+  font-size: 20px ;
+  background-color:rgb(71,193,185); 
+  color: white;
+  width: 100%;
+}
+
+.styled-table tr {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  width: 25vw;
+}
+
+#public-details-table {
+  width: 70%;
+}
+
+#public-details-table th {
+  font-size: 18px;
+}
+
+#employee-report-table, #employee-edit-table {
+  font-size: 18px ;
+  background-color:rgb(185, 185, 185); 
+  color: black;
+  width: 100%;
+}
+  
+#employee-report-table tr, #employee-edit-table tr {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  font-size: 16px;
+  width: 25vw;
+}
+  
+input, select, option {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+select {
+  margin-right: 5px;
+}
+
+button {
+  margin: 0 10px;
+}
+
+#damage-report {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#damage-form label, #damage-form input, #damage-form textarea {
+  display: flex;
+  align-items: left;
+  width: 300px;
+  margin: 5px;
+} 
+
+#public-reporting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#severity-sort, #user-sort, #location-sort {
+  display: inline-block;
+}
+
+#sort-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#internal-severity-sort, #status-sort, #id-sort, #internal-location-sort {
+  display: inline-block;
+}
+
+#employee-sort-top, 
+#employee-sort-bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#employee-sort-top {
+  margin-bottom: -40px;
+}
+
+#employee-sort {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+#add-headline {
+  margin: -10px;
+}
+
