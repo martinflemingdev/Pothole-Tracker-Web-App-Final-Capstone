@@ -1,4 +1,5 @@
 HELP.md
+main.js
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**

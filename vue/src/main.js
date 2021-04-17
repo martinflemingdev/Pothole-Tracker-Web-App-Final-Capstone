@@ -12,7 +12,7 @@ axios.defaults.baseURL = process.env.VUE_APP_REMOTE_API;
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: '*************************************',
+    key: 'AIzaSyDjR3jy_701Pqd54qSMyahGbu11u0EDZ1Y',
     libraries: 'places'
   }
 });
@@ -21,7 +21,7 @@ Vue.use(geocoder, {
   defaultCountryCode: null, // e.g. 'CA'
   defaultLanguage:    null, // e.g. 'en'
   defaultMode:        'lat-lng', // or 'address'
-  googleMapsApiKey:   '******************************************'
+  googleMapsApiKey:   'AIzaSyDjR3jy_701Pqd54qSMyahGbu11u0EDZ1Y'
 });
 
 
