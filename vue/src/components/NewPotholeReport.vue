@@ -6,22 +6,26 @@
         are reporting.
     </p>
 
-<div id="autocomplete">
+<div id="autocomplete-div">
       <p class="autocomplete">Or search and move the pin by address:</p>
       <GmapAutocomplete
         class="autocomplete" 
         @place_changed='setPlace'
       />
       <button
-        class="autocomplete"
+        id="move-marker"
         @click='moveMarker'
       >
         Move Marker
       </button>
     </div>
 
+    <p id="nearest-address">
+        Nearest Address to Pin: <u>{{ this.report.location }} </u>
+      </p>
+
     <form class="new-pothole-report" v-on:submit.prevent>
-      <div>
+      <div id="severity-div">
         <label for="severity">Please rank the pothole's severity:</label>
           <select name="severity" id="severity" v-model="report.user_severity">
             <option value="Minor">Minor</option>
@@ -30,15 +34,18 @@
             <option value="New route advised">New route advised</option>
             <option value="Catastrophic">Catastrophic</option>
           </select>
+          <button id="save-report" type="submit" v-on:click="saveReport">Save</button>
+      
       </div>
     </form>
+
     <div id="map" class>
       <GmapMap
         :center="center"
         :zoom="18"
         map-type-id="hybrid"
         :options="mapOptions"
-        style="width: 100vmin; height: 50vmin; position: relative"
+        style="width: 90%; height: 50vmin; position: relative"
         ref="mapRef"
         @click="handleMapClick"
       >
@@ -50,10 +57,7 @@
           @click="panToMarker"
         />
       </GmapMap> 
-      <button id="save-report" type="submit" v-on:click="saveReport">Save</button>
-      <p id="nearest-address">
-        Nearest Address to Pin: <u>{{ this.report.location }} </u>
-      </p>
+      
       <p id="lat-lng">
       Latitude: {{ marker.position.lat }} Longitude: {{ marker.position.lng }}</p>
     </div>
@@ -237,27 +241,38 @@ export default {
   justify-content: center;
 }
 
+#add-headline{
+  margin: 0px;
+}
+
+#move-marker {
+  display: inline;
+  margin: auto;
+}
+
 #save-report {
-  margin-top: 15px;
+  display: inline;
+  margin-top: 5px;
 }
 
 #new-pothole > p {
   margin-bottom: 5px;
 }
 
-#lat-lng {
-  margin-top: -5px;
+#nearest-address {
+  margin-top: 0;
 }
 
-#severity  {
-  margin-bottom: 10px;
+#lat-lng {
+  margin-top: 10px;
 }
 
 .autocomplete {
   display: inline;
+  margin-bottom: 7px;
 }
 
-/* #autocomplete {
+#severity-div {
   margin-bottom: 10px;
-} */
+}
 </style>
