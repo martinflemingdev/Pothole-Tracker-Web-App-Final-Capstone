@@ -39,7 +39,7 @@
       </div>
     </form>
 
-    <div id="map" class>
+    <div id="map">
       <GmapMap
         :center="center"
         :zoom="18"

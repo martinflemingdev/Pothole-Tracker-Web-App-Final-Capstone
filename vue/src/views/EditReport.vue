@@ -1,5 +1,5 @@
 <template>
-<div id ="map">
+<div id ="edit">
 
 <h1> Edit Report #{{report.report_id}} </h1>
     <table id="employee-edit-table">
@@ -53,13 +53,13 @@
     <button class="btn-style" id="delete" v-on:click.prevent="deleteReport(report.report_id)">Delete</button>
     </h3>
     <br>
-      <div id="edit-map">
+      <div id="map-edit">
       <GmapMap
         :center="center"
         :zoom="18"
         map-type-id="hybrid"
         :options="mapOptions"
-        style="width: 100vmin; height: 50vmin"
+        style="width: 90%; height: 50vmin; position: relative; "
         ref="mapRef"
       >
         <GmapMarker
@@ -190,6 +190,13 @@ data() {
 </script>
 
 <style> 
+
+#map-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .btn-style {
   margin: 0 10px;

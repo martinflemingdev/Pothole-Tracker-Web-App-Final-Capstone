@@ -18,13 +18,13 @@
         </table>
          
 
-      <div id="map">
+      <div id="map-details">
       <GmapMap
         :center="center"
         :zoom="18"
         map-type-id="hybrid"
         :options="mapOptions"
-        style="width: 100vmin; height: 50vmin"
+        style="width: 90%; height: 50vmin; position: relative; "
         ref="mapRef"
       >
         <GmapMarker
@@ -143,7 +143,9 @@ export default {
 
 <style>
 
-#details, #map {
+/* took out #details from below to make map render */
+
+#map-details {
   display: flex;
   flex-direction: column;
   align-items: center;

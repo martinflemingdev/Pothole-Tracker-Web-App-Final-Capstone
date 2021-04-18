@@ -42,10 +42,11 @@
       </GmapMap> -->
     </div>
     <div id="bottom-btns">
-      <button @click.prevent="reset" id="reset-btn">
-        See All Potholes </button>
+      <button @click.prevent="reset" id="reset-btn">See All Potholes</button>
+      <span></span>
       <button @click.prevent="details" id="details-btn">
-        See Details of Current Pothole </button>
+        See Details of Current Pothole
+      </button>
     </div>
   </div>
 </template>
@@ -62,7 +63,7 @@ export default {
         disableDefaultUI: true,
       },
       reports: [],
-      currentReport: {},
+      currentReport: "",
       // username: "",
     };
   },
@@ -90,15 +91,29 @@ export default {
     },
     reset() {
       this.center = { lat: 39.96003851345567, lng: -75.16224869099684 };
-      this.currentReport = {};
+      this.currentReport = "";
       this.$refs.mapRef.$mapPromise.then((map) => {
         map.setZoom(12);
         map.setCenter({ lat: 39.96003851345567, lng: -75.16224869099684 });
       });
     },
     details() {
-      this.$router.push( { name: 'report-details', params: { id: this.currentReport.report_id } } );
-    }
+      if (this.currentReport != "") {
+        if (this.$store.state.role == "ROLE_EMPLOYEE") {
+          this.$router.push({
+            name: "edit-report",
+            params: { id: this.currentReport.report_id },
+          });
+        } else {
+          this.$router.push({
+            name: "report-details",
+            params: { id: this.currentReport.report_id },
+          });
+        }
+      } else {
+        window.alert("Please click on a marker");
+      }
+    },
   },
 };
 </script>
@@ -113,7 +128,7 @@ img {
   /* flex-direction: column; */
   /* align-items: center; */
   justify-content: center;
-  margin-bottom: 20px ;
+  margin-bottom: 20px;
 }
 
 #bottom-btns {
@@ -122,11 +137,17 @@ img {
 }
 
 #reset-btn {
-  display: inline;
+  display: inline-block;
+}
+
+span:before {
+  content: " ";
+  display: inline-block;
+  width: 32px;
 }
 
 #details-btn {
-  display: inline;
+  display: inline-block;
   width: auto;
 }
 </style>
